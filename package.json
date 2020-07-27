@@ -1,0 +1,25 @@
+{
+  "name": "magic",
+  "version": "0.1.0",
+  "description": "just a magic file",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuchunhui/magic.git"
+  },
+  "keywords": [
+    "magic"
+  ],
+  "author": "fuchunhui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fuchunhui/magic/issues"
+  },
+  "homepage": "https://github.com/fuchunhui/magic#readme",
+  "dependencies": {
+    "axios": "^0.19.2"
+  }
+}
