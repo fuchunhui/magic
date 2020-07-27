@@ -17,5 +17,6 @@ def from_photo_to_pdf(photo_path):
         f.write(img2pdf.convert(photo_list, layout_fun=layout_fun))
 
 if __name__ == '__main__':
-    photo_path = r'./jd' // 文件绝对路径
+    # 文档绝对路径
+    photo_path = r'./jd'
     from_photo_to_pdf(photo_path)
