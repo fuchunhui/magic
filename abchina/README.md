@@ -1,4 +1,24 @@
-## 使用方式
+## 文件使用说明
+* main.js 获取具体某个订单编号的验收情况。需要指定订单编号value
+* all.js 遍历调用main的操作
+* cookies.js 存储当前登陆网站的cookie信息，用于自动登陆网址
+* test.js 脚本临时测试使用
+
+* temp.js 测试数据，订单编号的集合
+* cluster.js 集群脚本 主入口
+* cluster_master.js 主进程
+* cluster_worker.js work进程
+
+* single.js 单进程算法，多次打开关闭浏览器
+* optimize.js 优化算法，重复利用tab页，单次打开关闭浏览器
+* optimize 目录，存储优化算法生成的结果文件
+* `${number}`.js 计算正确的结果文件，number代表 worker进程编号
+* `${number}-error`.js 计算错误的结果文件，number代表 worker进程编号
+
+* product.js 获取订单编号列表脚本
+* product-list.js 订单编号存储文件
+
+* file.js 文件操作函数库，提供文件的增删存储操作
 
 ## 具体思路：
 > 使用puppeteer模拟用户操作行为，点击查看，新打开页面选择检测验收情况。
@@ -28,4 +48,9 @@
 2. 构建主和多子，事件监听。
 
 ### RoadMap
-1. 
+1. 算法可继续优化，利用单浏览器，多Tab页功能。比如，8核CPU，同时启动8个worker线程，每个浏览器同时开始4个tab页面，那么相当于同时计算8 * 4 = 32个订单。
+2. 计算结果的递归处理。
+  - 合并正确的计算结果，8核CPU为例，合并1.js，2.js ...... 8.js为result.js文件。错误的文件合并为result-error.js文件。
+  - 递归处理，result-error.js文件记录的订单内容，直到没有error文件出现。
+  - 后续递归需要调整策略，增加等待查询时间，否则第一次处理，不会报错，通常是等待时间不够导致的错误。
+3. 脚本的优化，整体可以抽离作为一个和任意网站不相关的执行脚本，此框架脚本可解决多数爬虫问题。

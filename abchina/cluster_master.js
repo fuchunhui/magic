@@ -4,7 +4,7 @@ const {getFile} = require('./file');
 
 // 处理的任务列表
 const list = getFile();
-// const list = getFile('./t.js'); // test
+// const list = getFile('./temp.js'); // test
 console.log('总任务数：', list.length);
 
 module.exports = async () => {
