@@ -2,6 +2,8 @@ const fs = require('fs');
 const axios = require('axios');
 
 const SAVE_NAME = 'product-list.js';
+const TARGET_NAME = 'target.js';
+const SOURCE_DIR = 'optimize';
 
 const appendFile = (data, path = SAVE_NAME) => {
   try {
@@ -32,8 +34,17 @@ const getFile = (path = SAVE_NAME) => {
 //   res.data.pipe(fs.createWriteStream(`${name}.png`));
 // });
 
+const mergeFile = (dir = SOURCE_DIR, path = TARGET_NAME) => {
+  const files = fs.readdirSync(dir);
+  const target = files.reduce((content, file) => {
+    return content + fs.readFileSync(`${dir}/${file}`);
+  }, '');
+  fs.writeFileSync(path, target);
+};
+
 module.exports = {
     appendFile,
     removeFile,
-    getFile
+    getFile,
+    mergeFile
 };
