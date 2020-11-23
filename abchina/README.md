@@ -17,6 +17,7 @@
 
 * product.js 获取订单编号列表脚本
 * product-list.js 订单编号存储文件
+* mark.js 读取optimize下的内容，转化生成excel文件`result.xlsx`
 
 * file.js 文件操作函数库，提供文件的增删存储操作
 

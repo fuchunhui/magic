@@ -21,6 +21,7 @@
   "homepage": "https://github.com/fuchunhui/magic#readme",
   "dependencies": {
     "axios": "^0.21.0",
+    "node-xlsx": "^0.15.0",
     "puppeteer": "^5.5.0"
   }
 }
