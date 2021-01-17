@@ -26,9 +26,9 @@
 2. `npm install` 初始化安装npm包
 3. `cd abchina` 进入到脚本目录
 4. 使用最新的cookie内容填充cookie.js（how？ chrome正常登录，获取目标网站的cookie内容（key，value））
-5. `node product`，获取所有的订单编号
+5. 修改product.js中的最大页码数（每页50条），然后执行命令，`node product`，获取所有的订单编号
 6. 上一步执行完成后，`node cluster`使用集群方式，获取验收结果
-7. 生成结果在optimize文件夹下，结果处理尚未来得及code
+7. 生成结果在optimize文件夹下，结果处理需要进一步跟进解决
 
 ## 具体思路：
 > 使用puppeteer模拟用户操作行为，点击查看，新打开页面选择检测验收情况。
