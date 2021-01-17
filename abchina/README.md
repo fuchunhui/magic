@@ -28,7 +28,11 @@
 4. 使用最新的cookie内容填充cookie.js（how？ chrome正常登录，获取目标网站的cookie内容（key，value））
 5. 修改product.js中的最大页码数（每页50条），然后执行命令，`node product`，获取所有的订单编号
 6. 上一步执行完成后，`node cluster`使用集群方式，获取验收结果
-7. 生成结果在optimize文件夹下，结果处理需要进一步跟进解决
+7. 生成结果在optimize文件夹下
+8. 当前步骤，缺少脚本，目前为手工操作。把*-error.js，合并到t.js，然后copy optimize文件夹，命名为back，修改cluster.js的路径为t.js，执行步骤6
+9. 把步骤7的成功文件，手动合并，命名为9.js，copy到back文件夹下
+10. `node merge`合并文件内容，生成target.js
+11. `node mark`生成result.xlsx文件
 
 ## 具体思路：
 > 使用puppeteer模拟用户操作行为，点击查看，新打开页面选择检测验收情况。
