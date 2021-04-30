@@ -2,4 +2,4 @@
 magic file
 
 # do something
-we are.
+it can help me, save my time.
