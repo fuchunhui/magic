@@ -1,10 +1,11 @@
 {
   "name": "magic",
   "version": "0.1.0",
-  "description": "just a magic file",
+  "description": "A magic file",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "wget": "node wget/image.js"
   },
   "repository": {
     "type": "git",
